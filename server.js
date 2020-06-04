@@ -12,6 +12,7 @@ app.use(express.json())
 
 
 app.use('/api/characters' , routes.characters)
+app.use('/api/users' , routes.users)
 
 
 app.listen(port , () =>{

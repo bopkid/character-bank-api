@@ -16,5 +16,6 @@ mongoose.connect(connectionString,configOptions)
 
 
     module.exports = {
-        Character: require('./character')
+        Character: require('./character'),
+        User: require('./user')
     }
