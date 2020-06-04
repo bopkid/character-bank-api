@@ -44,10 +44,20 @@ const update  = (req,res) =>{
         res.status(200).json({character: updatedCharacter})
     })
 }
+const destroy = (req,res) =>{
+    db.Character.findByIdAndDelete(req.params.id , (err, deletedCharacter) =>{
+        if(err) console.log(`Error in character#destory` ,err)
+        if(!deletedCharacter) return res.json({
+            message: "No Character with that ID found"
+        })
+        res.status(200).json({character:deletedCharacter})
+    }) 
+}
 
 module.exports= {
     index,
     show,
     create,
-    update
+    update,
+    destroy
 }
