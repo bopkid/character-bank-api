@@ -12,6 +12,27 @@ const index = (req,res) =>{
     })
 }
 
+const show = (req,res) =>{
+    db.Character.create(req.body , (err,foundCharacter)=>{
+        if(err) console.log('error in characers#show' ,err)
+
+        if(!foundCharacter) return res.json({
+            message: 'Character with provided ID not found'
+        })
+        res.status(200).json({character:foundCharacter})
+    })
+}
+
+const create = (req,res) =>{
+    db.Character.create(req.body, (err,savedCharacter ) =>{
+        if(err) console.log(`Error in game#create`. err)
+
+        res.status(200).json({character:savedCharacter})
+    })
+}
+
 module.exports= {
     index,
+    show,
+    create,
 }
