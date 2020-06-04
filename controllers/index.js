@@ -1,4 +1,5 @@
 module.exports = {
     characters: require('./characters'),
-    users: require('./user')
+    users: require('./user'),
+    auth : require('./auth'),
 }
