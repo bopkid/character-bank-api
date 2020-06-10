@@ -11,7 +11,13 @@ const app = express()
 
 app.use(express.json())
 
-app.use(cors())
+const corsOptions ={
+    origin:[`http://localhost:3000`],
+    origin: [`http://localhost:3000`],
+    credentials: true, // allows our session cookie to be sent back and forth from server to client
+    optionsSuccessStatus: 200 // some older browsers choke on the default 204 code  
+}
+app.use(cors(corsOptions))
 
 app.use(session({
     store: new MongoStore({url:'mongodb://localhost:27017/characterbank'}),

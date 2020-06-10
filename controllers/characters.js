@@ -13,15 +13,14 @@ const index = (req,res) =>{
 }
 
 const show = (req,res) =>{
-    db.Character.findById(req.param.id) , (err,foundCharacter) =>{
-        if(err) console.log(('Eorror in gane#show' ,err))
+    db.Character.findById(req.params.id, (err,foundCharacter) =>{
+        if(err)console.log(`Error in Character#show`,err)
 
         if(!foundCharacter) return res.json({
-            message:'Character with provide iD not found.'
-
+            message:"Character with provided Id Not Found"
         })
-        res.status(200).json({character:foundCharacter})
-    }
+        res.status(200).json({character: foundCharacter})
+    }) 
 }
 
 const create = (req,res) =>{

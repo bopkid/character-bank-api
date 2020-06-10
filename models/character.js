@@ -6,12 +6,20 @@ const CharacterSchema = new Schema({
         type:String,
         required:true
     },
+    img: {
+        type: String
+    } ,
     System: String,
     Bio: String,
     Feats: Array,
     Inventory: Array,
     Magic: Array,
-    Skill: Array
+    Skill: Array,
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required:true
+    }
 })
 
 const Chracter = mongoose.model('Character', CharacterSchema);
