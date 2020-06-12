@@ -12,8 +12,7 @@ const app = express()
 app.use(express.json())
 
 const corsOptions ={
-    origin:[`http://localhost:3000`],
-    origin: [`http://localhost:3000`],
+    origin:[`http://localhost:3000`,`https://protected-headland-41056.herokuapp.com`],
     credentials: true, // allows our session cookie to be sent back and forth from server to client
     optionsSuccessStatus: 200 // some older browsers choke on the default 204 code  
 }
