@@ -37,6 +37,10 @@ app.use('/api/users' , routes.users)
 app.use('/api/auth' , routes.auth)
 
 
+app.get('/', ()=>{
+    return "hello "
+})
+
 app.listen(port , () =>{
     console.log(`server is Running at port ${port}`)
 })
