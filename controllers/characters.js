@@ -53,10 +53,21 @@ const destroy = (req,res) =>{
     }) 
 }
 
+const find = (req,res) =>{
+    db.Character.find({user:req.params.id}, (err, foundCharacters)=>{
+        if(err) console.log(`Error in charactr#user`, err)
+        if(!foundCharacters) return res.json({
+            message:"No characters with that ID found"
+        })
+        res.status(200).json({characters:foundCharacters})
+    })
+}
+
 module.exports= {
     index,
     show,
     create,
     update,
-    destroy
+    destroy,
+    find
 }
