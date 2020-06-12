@@ -37,7 +37,7 @@ app.use('/api/users' , routes.users)
 app.use('/api/auth' , routes.auth)
 
 app.get('/', (req,res) => {
-    res.send('hello there!')
+    res.send('hello there!!')
 })
 
 
