@@ -37,9 +37,6 @@ app.use('/api/users' , routes.users)
 app.use('/api/auth' , routes.auth)
 
 
-app.get('/', (req,res) => {
-    res.send('here is your information');
-});
 
 
 app.listen(port , () =>{
