@@ -20,7 +20,7 @@ const corsOptions ={
 app.use(cors(corsOptions))
 
 app.use(session({
-    store: new MongoStore({url:'mongodb://localhost:27017/characterbank'}),
+    store: new MongoStore({url:process.env.MONGODB_URI ||'mongodb://localhost:27017/characterbank'}),
     secret: "BigScrectsDontTake",
     resave:false,
     saveUninitialized: false,
