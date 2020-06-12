@@ -37,9 +37,10 @@ app.use('/api/users' , routes.users)
 app.use('/api/auth' , routes.auth)
 
 
-app.get('/', ()=>{
-    return "hello "
-})
+app.get('/', (req,res) => {
+    res.send('here is your information');
+});
+
 
 app.listen(port , () =>{
     console.log(`server is Running at port ${port}`)
