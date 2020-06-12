@@ -12,8 +12,8 @@ const app = express()
 app.use(express.json())
 
 const corsOptions ={
-    origin:[`https://protected-headland-41056.herokuapp.com`],
-    origin: [`https://protected-headland-41056.herokuapp.com`],
+    origin:[`http://localhost:3000`],
+    origin: [`http://localhost:3000`],
     credentials: true, // allows our session cookie to be sent back and forth from server to client
     optionsSuccessStatus: 200 // some older browsers choke on the default 204 code  
 }
@@ -39,6 +39,6 @@ app.use('/api/auth' , routes.auth)
 
 
 
-app.listen(port , () =>{
+app.listen(process.env.PORT || 3000 , () =>{
     console.log(`server is Running at port ${port}`)
 })
