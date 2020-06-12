@@ -36,7 +36,9 @@ app.use('/api/characters' , routes.characters)
 app.use('/api/users' , routes.users)
 app.use('/api/auth' , routes.auth)
 
-
+app.get('/', (req,res) => {
+    res.send('hello there')
+})
 
 
 app.listen(process.env.PORT || 3000 , () =>{
